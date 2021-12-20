@@ -20,11 +20,15 @@ function App() {
 const Folder = (props) => {
   const [ isOpen, setIsOpen ] = useState(false);
   const { name, children} = props;
+  const direction = isOpen ? 'down' : 'right';
   
   const handleClick = () => setIsOpen(!isOpen);
 
   return <div>
-    <span onClick={ handleClick }><i className='folder icon'></i></span>
+    <span onClick={ handleClick }>
+      <i className='blue folder icon'></i>
+    <i className={`caret ${direction} icon`}></i>
+    </span>
     {name}
       <div style={ {marginLeft: '17px'} }>
         {isOpen ? children : null}
