@@ -10,7 +10,10 @@ function App() {
       <File name='dogs.png'/>
       <File name='cats.png'/>
     </Folder>
-    <Folder name='Applications'/>
+    <Folder name='Applications'>
+      <File name='pong.exe'/>
+      <File name='Xonic.exe'/>
+    </Folder>
     </div>;
 }
 
@@ -21,7 +24,8 @@ const Folder = (props) => {
   const handleClick = () => setIsOpen(!isOpen);
 
   return <div>
-    <span onClick={ handleClick }>{name}</span>
+    <span onClick={ handleClick }><i className='folder icon'></i></span>
+    {name}
       <div style={ {marginLeft: '17px'} }>
         {isOpen ? children : null}
       </div>
